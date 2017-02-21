@@ -100,16 +100,16 @@ def calculate_tax(income):
     calculate_tax(income)  # $210,000 * 0.35 = 73500 = $73,500
     """
     tax_due = 0
-        if income > 100000:
-            tax_due += .035 * income
-        elif income <= 100000:
-            tax_due += .30 * income
-        elif income <= 75000:
-            tax_due += .25 * 75000
-        else:
-            tax_due += .15 * income
-        return int(tax_due)
-    p
+    if income <= 50000:
+        tax_due += .15 * income
+    elif income <= 75000:
+        tax_due += .25 * income
+    elif income <= 100000:
+        tax_due += .30 * income
+    else:
+        tax_due += .35 * income
+    return int(tax_due)
+    
 
 
 # Question 6
@@ -133,10 +133,10 @@ def matrix_sum(a_matrix):
     matrix_sum(m2)  # 198
     """
     matrix_sum = 0
-    for i in matrix1:
+    for i in a_matrix:
         for j in i:
             matrix_sum += j
-    return matrix_total
+    return matrix_sum
             
     
     
